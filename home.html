@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>OBJ View</title>
+        <meta name="description" content="Home page">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../images/pageIcon.png" rel="icon"> 
+        <link href="../css/styles.css" rel="stylesheet">
+
+        <!-- Collapsible JS-->
+        <script src="../js/collapsibleFunction.js" defer></script>
+
+        <!-- ThreeJS Library-->
+        <script type="importmap" defer>{
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+                "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+            }
+        }
+         </script>
+
+        <!-- Bootstrap Library -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <header>
+            <img id="pageIcon" src="../images/pageIcon.png" alt="Image of website's icon." width="75" height="75">
+            <h1>Simple Object Viewer</h1>
+            <p id="underHeading1Text">Project</p>
+        </header>
+        <main>
+            <div id="mainSection">
+                <div id="viewport">
+                    <!-- Viewport is inserted here via JS -->
+                </div>
+                <div id="viewportMenuOptions">
+                    <!-- Objects menu-->
+                    <div>
+                        <input type="checkbox" id="add-toggle" class="viewOption">
+                        <label for="add-toggle" class="labelOption">Objects</label>
+                        <ul class="viewOptionSub" id="addOptions">
+                            <button class="addOpt"> Cube </button>
+                            <button class="addOpt"> Cylinder </button>
+                            <button class="addOpt"> Pyramid </button>
+                            <button class="addOpt"> Cone </button>
+                            <button class="addOpt"> Sphere </button>
+                            <button class="addOpt"> Circle </button>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <!-- Properties Menu -->
+                         <input type="checkbox" id="properties-toggle" class="viewOption">
+                        <label for="properties-toggle" class="labelOption">Properties</label>
+                        <ul class="viewOptionSub" id="propertiesOptions">
+                            <!-- Placeholder -->
+
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <!-- Controls Menu -->
+                        <input type="checkbox" id="camera-menu" class="viewOption">
+                        <label for="camera-menu" class="labelOption">Camera</label>
+                        <ul class="viewOptionSub">
+                            <label for="fovCamera" id="fovLabel">Field of View</label><br>
+                            <input id="fovCamera" type="range" min="10" max="170" step="1" value="87"><br>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <!-- Menu -->
+                         <button type="button" id="clearButton">Clear</button>
+                    </div>
+                </div>
+            </div>
+            <script src="../js/threeJSViewport.js" type="module" defer></script>
+            
+            <button type="button" class="collapsible">Description & Instructions</button>
+            <div class="contentDiv">
+                <p>A simple object viewer for very primitive forms.</p>
+                <ul>
+                    <li>Click and hold the viewport to rotate the camera</li>
+                    <li>Hold right click in the viewport to move the camera</li>
+                    <li>Zoom in and out in the viewport to move forward or backward</li>
+                    <li>Select objects by clicking on them in the viewport</li>
+                    <li>Change object properties via the property tab</li>
+                </ul>
+            </div>
+            <br>
+
+            <button type="button" class="collapsible">Resources</button>
+            <div class="contentDiv">
+                <ul>
+                    <li>Languages: HTML5, CSS, Javascript</li>
+                    <li>ThreeJS Library (Ver. 0.161.0)</li>
+                    <li>Bootstrap v5.0.2</li>
+                </ul>
+            </div>
+        </main>
+    </body>
+</html>
